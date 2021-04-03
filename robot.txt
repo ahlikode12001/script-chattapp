@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /
+Disallow: /api/
+Disallow: /assets/
+Disallow: /dashboard/
+Disallow: /languages/
+Disallow: /layout/
+Disallow: /.htaccess
+
+
+
