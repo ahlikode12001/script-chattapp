@@ -4,7 +4,7 @@
   $hostname = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "chattapp";
+  $dbname = "ahlikode-chat";
 
   $conn = mysqli_connect($hostname, $username, $password, $dbname);
   if(!$conn){

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2021 at 06:28 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Waktu pembuatan: 14 Apr 2021 pada 06.35
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `chattapp`
+-- Database: `ahlikode-chat`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_account`
+-- Struktur dari tabel `tbl_account`
 --
 
 CREATE TABLE `tbl_account` (
@@ -40,10 +40,18 @@ CREATE TABLE `tbl_account` (
   `ban_account` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tbl_account`
+--
+
+INSERT INTO `tbl_account` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `img`, `status`, `join_date`, `ban_account`) VALUES
+(26, 251082529, 'Ahli', 'Kode', 'ahlikode@gmail.com', '$2y$10$/YA3ENm0uMfGSTAhE8DCXeeub9vrnurTOjZKhTXoU.rLQma7DWH3y', '1618374786devover.jpg', 'offline', '14-Apr-2021', 't'),
+(27, 609130802, 'Admin ', 'istrator', 'admin@gmail.com', '$2y$10$VSmeKyatAdX5Wp8ZpM2/Q./msMQ88f5EdW2/DCTe7Wy5dWRDEzOGi', '1618374817smkbisa-.jpg', 'offline', '14-Apr-2021', 't');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_configration`
+-- Struktur dari tabel `tbl_configration`
 --
 
 CREATE TABLE `tbl_configration` (
@@ -58,16 +66,16 @@ CREATE TABLE `tbl_configration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_configration`
+-- Dumping data untuk tabel `tbl_configration`
 --
 
 INSERT INTO `tbl_configration` (`id_config`, `fname`, `lname`, `email`, `password`, `create_date`, `s`, `a`) VALUES
-(1, 'Ahli', 'Kode', 'ahlikode@gmail.com', '$2y$10$GJ3Dnp3hrdYCFc1.lVK.WuI9GmIWlNF4hd7zHzfrFBCrq7claafim', '8-Mar-2021', '1', '1');
+(1, 'Ahli', 'Kode', 'admin@gmail.com', '$2y$10$VSmeKyatAdX5Wp8ZpM2/Q./msMQ88f5EdW2/DCTe7Wy5dWRDEzOGi', '10-sep-2021', '1', '1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_language`
+-- Struktur dari tabel `tbl_language`
 --
 
 CREATE TABLE `tbl_language` (
@@ -77,7 +85,7 @@ CREATE TABLE `tbl_language` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_language`
+-- Dumping data untuk tabel `tbl_language`
 --
 
 INSERT INTO `tbl_language` (`id_language`, `Name_language`, `action`) VALUES
@@ -86,7 +94,7 @@ INSERT INTO `tbl_language` (`id_language`, `Name_language`, `action`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_messages`
+-- Struktur dari tabel `tbl_messages`
 --
 
 CREATE TABLE `tbl_messages` (
@@ -100,7 +108,7 @@ CREATE TABLE `tbl_messages` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_report`
+-- Struktur dari tabel `tbl_report`
 --
 
 CREATE TABLE `tbl_report` (
@@ -113,10 +121,17 @@ CREATE TABLE `tbl_report` (
   `report_Date` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tbl_report`
+--
+
+INSERT INTO `tbl_report` (`id_report`, `incoming_id`, `categori`, `massage_report`, `img`, `status`, `report_Date`) VALUES
+(14, 251082529, 'Tes Laporan', 'tes', '1618374866devover.jpg', 'Checking', '14-Apr-2021');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_site`
+-- Struktur dari tabel `tbl_site`
 --
 
 CREATE TABLE `tbl_site` (
@@ -128,7 +143,7 @@ CREATE TABLE `tbl_site` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_site`
+-- Dumping data untuk tabel `tbl_site`
 --
 
 INSERT INTO `tbl_site` (`id_site`, `nama_site`, `description_site`, `author_site`, `default_lang`) VALUES
@@ -139,77 +154,77 @@ INSERT INTO `tbl_site` (`id_site`, `nama_site`, `description_site`, `author_site
 --
 
 --
--- Indexes for table `tbl_account`
+-- Indeks untuk tabel `tbl_account`
 --
 ALTER TABLE `tbl_account`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `tbl_configration`
+-- Indeks untuk tabel `tbl_configration`
 --
 ALTER TABLE `tbl_configration`
   ADD PRIMARY KEY (`id_config`);
 
 --
--- Indexes for table `tbl_language`
+-- Indeks untuk tabel `tbl_language`
 --
 ALTER TABLE `tbl_language`
   ADD PRIMARY KEY (`id_language`);
 
 --
--- Indexes for table `tbl_messages`
+-- Indeks untuk tabel `tbl_messages`
 --
 ALTER TABLE `tbl_messages`
   ADD PRIMARY KEY (`msg_id`);
 
 --
--- Indexes for table `tbl_report`
+-- Indeks untuk tabel `tbl_report`
 --
 ALTER TABLE `tbl_report`
   ADD PRIMARY KEY (`id_report`);
 
 --
--- Indexes for table `tbl_site`
+-- Indeks untuk tabel `tbl_site`
 --
 ALTER TABLE `tbl_site`
   ADD PRIMARY KEY (`id_site`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tbl_account`
+-- AUTO_INCREMENT untuk tabel `tbl_account`
 --
 ALTER TABLE `tbl_account`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `tbl_configration`
+-- AUTO_INCREMENT untuk tabel `tbl_configration`
 --
 ALTER TABLE `tbl_configration`
   MODIFY `id_config` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_language`
+-- AUTO_INCREMENT untuk tabel `tbl_language`
 --
 ALTER TABLE `tbl_language`
   MODIFY `id_language` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_messages`
+-- AUTO_INCREMENT untuk tabel `tbl_messages`
 --
 ALTER TABLE `tbl_messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
--- AUTO_INCREMENT for table `tbl_report`
+-- AUTO_INCREMENT untuk tabel `tbl_report`
 --
 ALTER TABLE `tbl_report`
-  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `tbl_site`
+-- AUTO_INCREMENT untuk tabel `tbl_site`
 --
 ALTER TABLE `tbl_site`
   MODIFY `id_site` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

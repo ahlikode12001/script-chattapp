@@ -1,7 +1,7 @@
 <?php
 
 // koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "chattapp");
+$conn = mysqli_connect("localhost", "root", "", "ahlikode-chat");
 
 
 function query($query) {
@@ -20,13 +20,5 @@ function hapususer($unique_id) {
 	return mysqli_affected_rows($conn);
 }
 
-function cari($keyword) {
-	$query = "SELECT * FROM tbl_account
-				WHERE
-              fname LIKE '%$keyword%' OR			 
-			  lname LIKE '%$keyword%'
-			";
-	return query($query);
-}
-
+ 
 ?>
